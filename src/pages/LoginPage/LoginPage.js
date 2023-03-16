@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Audio } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function LoginPage() {
     const [form, setForm] = useState({ email: "", password: "" });
@@ -60,7 +60,7 @@ export default function LoginPage() {
                     onChange={handleForm}
                     placeholder="email" 
                     required 
-                    disabled={disableInput}
+                    disabled={isLoading}
                 />
                 <label htmlFor="senha"></label>
                 <input 
@@ -72,16 +72,16 @@ export default function LoginPage() {
                     onChange={handleForm} 
                     placeholder="senha"
                     required 
-                    disabled={disableInput}
+                    disabled={isLoading}
                 />
 
                 {isLoading ? (
-                    <Audio type="TailSpin" color="#00BFFF" />
+                    <ThreeDots type="TailSpin" color="#00BFFF" />
                 ) : (
                     <button 
                         data-test="login-btn" 
                         type="submit" 
-                        disabled={disableInput}
+                        disabled={isLoading}
                     >
                     Entrar
                 </button>
