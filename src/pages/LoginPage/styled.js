@@ -11,7 +11,7 @@ export const Logo = styled.img`
     margin-top: 68px;
 ` 
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
