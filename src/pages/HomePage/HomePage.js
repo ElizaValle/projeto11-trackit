@@ -8,13 +8,13 @@ export default function HomePage() {
             <Logo src={logo} />
             <FormContainer>
                 <label htmlFor="email"></label>
-                <input id="email" name="email" type="email" placeholder="email" required />
+                <input data-test="email-input" id="email" name="email" type="email" placeholder="email" required />
                 <label htmlFor="senha"></label>
-                <input id="senha" name="senha" type="password" placeholder="senha" required />
+                <input data-test="password-input" id="senha" name="senha" type="password" placeholder="senha" required />
 
-                <button type="submit">Entrar</button>
+                <button data-test="login-btn" type="submit">Entrar</button>
 
-                <Link>
+                <Link data-test="signup-link">
                     <p>Não tem uma conta? Cadastre-se!</p>
                 </Link>
             </FormContainer> 

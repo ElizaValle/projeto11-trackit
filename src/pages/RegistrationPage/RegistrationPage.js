@@ -8,17 +8,17 @@ export default function RegistrationPage() {
             <Logo src={logo} />
             <FormContainer>
                 <label htmlFor="email"></label>
-                <input id="email" name="email" type="email" placeholder="email" required />
+                <input data-test="email-input" id="email" name="email" type="email" placeholder="email" required />
                 <label htmlFor="senha"></label>
-                <input id="senha" name="senha" type="password" placeholder="senha" required />
+                <input data-test="password-input" id="senha" name="senha" type="password" placeholder="senha" required />
                 <label htmlFor="nome"></label>
-                <input id="nome" name="nome" type="text" placeholder="nome" required />
+                <input data-test="user-name-input" id="nome" name="nome" type="text" placeholder="nome" required />
                 <label htmlFor="foto"></label>
-                <input id="foto" name="foto" type="link" placeholder="foto" required />
+                <input data-test="user-image-input" id="foto" name="foto" type="link" placeholder="foto" required />
 
-                <button type="submit">Cadastrar</button>
+                <button data-test="signup-btn" type="submit">Cadastrar</button>
 
-                <Link>
+                <Link data-test="login-link">
                     <p>Já tem uma conta? Faça login!</p>
                 </Link>
             </FormContainer> 
