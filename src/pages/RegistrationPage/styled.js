@@ -16,6 +16,7 @@ export const FormContainer = styled.form`
     flex-direction: column;
     align-items: center;
     margin: 32px 0;
+    position: relative;
     input {
         width: 303px;
         height: 45px;
@@ -36,6 +37,7 @@ export const FormContainer = styled.form`
         font-family: 'Lexend Deca', sans-serif;
         font-size: 20px;
         color: #FFFFFF;
+        position: relative;
     }
     a {
         margin-top: 25px;
@@ -43,4 +45,12 @@ export const FormContainer = styled.form`
         font-size: 13px;
         color: #52B6FF;
     }
+`
+export const Loading = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: ${props => props.isLoading ? 'block' : 'none'};
 `

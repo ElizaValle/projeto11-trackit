@@ -1,11 +1,10 @@
 import logo from "../../assets/logo.png"
-import { ScreenContainer, Logo, FormContainer } from "./styled";
+import { ScreenContainer, Logo, FormContainer, Loading } from "./styled";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { ThreeDots } from "react-loader-spinner";
-import { ThemeConsumer } from "styled-components";
 
 export default function RegistrationPage() {
     const [form, setForm] = useState({
@@ -103,12 +102,14 @@ export default function RegistrationPage() {
                 />
 
                 {isLoading ? (
-                    <ThreeDots type="TailSpin" color="#00BFFF" />
+                    <Loading isLoading={true}>
+                        <ThreeDots type="TailSpin" color="#FFFFFF" />
+                    </Loading>
                 ) : (
                     <button 
                         data-test="signup-btn" 
                         type="submit"
-                        disabled={isLoading}
+                        disabled={disabledInput}
                     >
                         Cadastrar
                     </button>

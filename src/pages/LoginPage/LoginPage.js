@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.png"
-import { ScreenContainer, Logo, FormContainer } from "./styled";
+import { ScreenContainer, Logo, FormContainer, Loading } from "./styled";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { useEffect, useState } from "react";
@@ -75,15 +75,23 @@ export default function LoginPage() {
                 />
 
                 {isLoading ? (
-                    <ThreeDots type="TailSpin" color="#00BFFF" />
+                    <button 
+                        data-test="login-btn" 
+                        type="submit" 
+                        disabled={disableInput}
+                    >
+                        <Loading isLoading={true}>
+                            <ThreeDots type="TailSpin" color="#FFFFFF" />
+                        </Loading>
+                    </button>
                 ) : (
                     <button 
                         data-test="login-btn" 
                         type="submit" 
-                        disabled={isLoading}
+                        disabled={disableInput}
                     >
-                    Entrar
-                </button>
+                        Entrar
+                    </button>
                 )}
 
                 <Link data-test="signup-link" to={"/cadastro"}>
