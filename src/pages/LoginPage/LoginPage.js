@@ -39,7 +39,7 @@ export default function LoginPage() {
             })
             .catch((err) => { 
                 //alert("Não foi possível efetuar o login, tente novamente!");
-                alert(`Erro ${err.response.data}`);
+                alert(`Erro ${err.response.status}`);
                 setDisableInput(false);
             })
             .finally(() => setIsLoading(false));
