@@ -11,8 +11,6 @@ export default function LoginPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [disableInput, setDisableInput] = useState(true);
 
-    console.log(form)
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -39,8 +37,9 @@ export default function LoginPage() {
                 navigate("/hoje");
                 setDisableInput(true);
             })
-            .catch(() => { 
-                alert("Não foi possível efetuar o login, tente novamente!");
+            .catch((err) => { 
+                //alert("Não foi possível efetuar o login, tente novamente!");
+                alert(`Erro ${err.response.data}`);
                 setDisableInput(false);
             })
             .finally(() => setIsLoading(false));
@@ -87,7 +86,7 @@ export default function LoginPage() {
                 </button>
                 )}
 
-                <Link data-test="signup-link">
+                <Link data-test="signup-link" to={"/cadastro"}>
                     <p>Não tem uma conta? Cadastre-se!</p>
                 </Link>
             </FormContainer> 

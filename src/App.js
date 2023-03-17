@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        {/* <Route path="/cadastro" element={<RegistrationPage />} /> */} 
+        <Route path="/cadastro" element={<RegistrationPage />} /> 
         {/* <Route path="/habitos" element={<HabitsPage />} /> */}
         <Route path="/hoje" element={<HabitTodayPage />} />
         {/* <Route path="/historico" element={<HistoryOfHabitsPage />} /> */}
