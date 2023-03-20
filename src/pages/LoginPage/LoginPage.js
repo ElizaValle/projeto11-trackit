@@ -88,7 +88,7 @@ export default function LoginPage() {
                     <button 
                         data-test="login-btn" 
                         type="submit" 
-                        disabled={disableInput}
+                        /* disabled={disableInput} */
                     >
                         Entrar
                     </button>

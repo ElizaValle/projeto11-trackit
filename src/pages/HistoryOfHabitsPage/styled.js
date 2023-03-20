@@ -44,20 +44,17 @@ export const Footer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    p {
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-family: 'Lexend Deca', sans-serif;
         font-size: 17px;
         color: #52B6FF;
+        border: none;
+        background-color: transparent;
     }
-    a {
-        text-decoration: none;
-    }
-`
-export const ImageFooter = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 `
 export const ImageCircle = styled.img`
     width: 91px;

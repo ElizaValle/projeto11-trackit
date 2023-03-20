@@ -5,11 +5,13 @@ import hoje from "../../assets/hoje.png";
 import vector from "../../assets/vector.png";
 import {  
     Header, Logo, Foto, ContentBody, ContentHeader, Footer, 
-    ImageFooter, ImageCircle, ImageText, ImageVector
+    ImageCircle, ImageText, ImageVector
 } from "./styled";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function HistoryOfHabitsPage() {
+    const navigate = useNavigate();
+
     return (
         <>
             <Header data-test="header">
@@ -28,17 +30,17 @@ export default function HistoryOfHabitsPage() {
 
 
                 <Footer data-test="menu">
-                    <Link data-test="habit-link">
-                        <p>Hábitos</p>
-                    </Link>
-                    <ImageFooter data-test="today-link">
+                    <button data-test="habit-link" onClick={() => navigate("/habitos")}>
+                        Hábitos
+                    </button>
+                    <button data-test="today-link" onClick={() => navigate("/hoje")}>
                         <ImageCircle src={circulo} alt="círculo azul" />
                         <ImageText src={hoje} alt="texto" />
                         <ImageVector src={vector} alt="vetor" />
-                    </ImageFooter> 
-                    <Link data-tes="history-link">
-                        <p>Histórico</p>
-                    </Link>
+                    </button> 
+                    <button data-tes="history-link" onClick={() => navigate("/historico")}>
+                        Histórico
+                    </button>
                 </Footer>                
             </ContentBody>
         </>

@@ -1,22 +1,28 @@
 import TrackIt from "../../assets/TrackIt.png";
-import foto from "../../assets/foto.png";
 import circulo from "../../assets/circulo.png";
 import hoje from "../../assets/hoje.png";
 //import vector from "../../assets/vector.png";
 import check from "../../assets/check.png";
 import {  
     Header, Logo, Foto, ContentBody, ContentHeader, Footer, 
-    Text, ImageFooter, ImageCircle, ImageText,
+    Text, ImageCircle, ImageText,
     ImageVector, HabitsArea, CheckButton, Habit
 } from "./styled";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ImageContext } from "../../constants/ImageContext";
 
 export default function HabitTodayPage() {
+    const navigate = useNavigate();
+    const { imageUrl } = useContext(ImageContext);
+
+
+
     return (
         <>
             <Header data-test="header">
                 <Logo src={TrackIt} />
-                <Foto src={foto} />
+                <Foto src={imageUrl} />
             </Header>
 
             <ContentBody>
@@ -82,17 +88,17 @@ export default function HabitTodayPage() {
                 </HabitsArea>
 
                 <Footer data-test="menu">
-                    <Link data-test="habit-link">
-                        <p>Hábitos</p>
-                    </Link>
-                    <ImageFooter data-test="today-link">
+                    <button data-test="habit-link" onClick={() => navigate("/habitos")}>
+                        Hábito
+                    </button>
+                    <button data-test="today-link" onClick={() => navigate("/hoje")}>
                         <ImageCircle src={circulo} alt="círculo azul" />
                         <ImageText src={hoje} alt="texto" />
                         {/* <ImageVector src={vector} alt="vetor" /> */}
-                    </ImageFooter> 
-                    <Link data-tes="history-link">
+                    </button> 
+                    <button data-test="history-link" onClick={() => navigate("/historico")}>
                         <p>Histórico</p>
-                    </Link>
+                    </button>
                 </Footer>                
             </ContentBody>
         </>

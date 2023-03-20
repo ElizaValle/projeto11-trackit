@@ -4,6 +4,8 @@ export const Header = styled.div`
     height: 70px;
     background-color: #126BA5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    /* position: fixed;
+    top: 0; */
 `
 export const Logo = styled.img`
     margin-left: 18px;
@@ -11,6 +13,9 @@ export const Logo = styled.img`
     margin-bottom: 10px;
 `
 export const Foto = styled.img`
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
     margin-top: 9px;
 `
 export const ContentBody = styled.div`
@@ -84,20 +89,17 @@ export const Footer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    p {
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
         font-family: 'Lexend Deca', sans-serif;
         font-size: 17px;
         color: #52B6FF;
+        background-color: transparent;
     }
-    a {
-        text-decoration: none;
-    }
-`
-export const ImageFooter = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 `
 export const ImageCircle = styled.img`
     width: 91px;

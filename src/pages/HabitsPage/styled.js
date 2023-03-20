@@ -11,11 +11,14 @@ export const Logo = styled.img`
     margin-bottom: 10px;
 `
 export const Foto = styled.img`
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
     margin-top: 9px;
 `
 export const ContentBody = styled.div`
     height: 100vh;
-    background-color: #E5E5E5;
+    background-color: #F2F2F2;
 `
 export const ContentHeader = styled.div`
     display: flex;
@@ -52,9 +55,7 @@ export const Text = styled.div`
         color: #666666;
     }
 `
-//export const HabitsArea = styled.div``
-
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
     width: 340px;
     height: 180px;
     background-color: #FFFFFF;
@@ -81,7 +82,7 @@ export const FormContainer = styled.div`
 export const ButtonsArea = styled.div`
     margin-top: 8px;
     margin-bottom: 29px;
-    margin-left: 15px;
+    margin-left: -75px;
     button {
         width: 30px;
         height: 30px;
@@ -95,12 +96,13 @@ export const ButtonsArea = styled.div`
 
 export const CancelAndSave = styled.div`
     margin-left: 140px;
-    a {
-        text-decoration: none;
+    button:first-child {
+        border: none;
         font-family: 'Lexend Deca', sans-serif;
         font-size: 15px;
         color: #52B6FF;
         margin-right: 23px;
+        background-color: transparent;
     }
     button {
         width: 84px;
@@ -114,6 +116,15 @@ export const CancelAndSave = styled.div`
         margin-bottom: 15px;
     }
 `
+export const Loading = styled.div`
+    position: absolute;
+    top: 43.9%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: ${props => props.isLoading ? 'block' : 'none'};
+`
+
 export const HabitsArea = styled.div`
     margin-top: 20px;
 `
@@ -163,17 +174,17 @@ export const Footer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    p {
+    button {
         font-family: 'Lexend Deca', sans-serif;
         font-size: 17px;
         color: #52B6FF;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-`
-export const ImageFooter = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 `
 export const ImageCircle = styled.img`
     width: 91px;
